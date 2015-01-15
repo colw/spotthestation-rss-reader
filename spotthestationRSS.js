@@ -1,4 +1,3 @@
-var fs = require('fs');
 var parseString = require('xml2js').parseString;
 
 var ISS = function() {}
