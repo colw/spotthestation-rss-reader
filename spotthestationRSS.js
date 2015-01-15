@@ -1,6 +1,6 @@
 var parseString = require('xml2js').parseString;
 
-var ISS = function() {}
+var ISS = function() {};
 
 ISS.prototype.parseRSS = function(contents, callback) {
 	parseString(contents, function(err, result) {
@@ -9,7 +9,7 @@ ISS.prototype.parseRSS = function(contents, callback) {
 		if (callback)
 			callback(feedObj);
 	});
-}
+};
 
 function parseTitle(s) {
 	// e.g. "2015-01-08 ISS Sighting"
@@ -34,10 +34,10 @@ function getFields(desc) {
 				  "Departure"];
 	var ret = {};
 	fields.forEach(function(s) {
-		var rgx = new RegExp(s + ": (.*) <br\/>")
+		var rgx = new RegExp(s + ": (.*) <br\/>");
 		var matches = rgx.exec(desc);
 		if (matches.length > 1) {
-			ret[s] = matches[1]
+			ret[s] = matches[1];
 		}
 	});
 	return ret;
@@ -49,7 +49,7 @@ function getElapsedTime(oldDate, elapsed) {
 }
 
 function makeSighting(title, data, guid) {
-	var ret = {}
+	var ret = {};
 	ret.Title = title;
 	ret.Start = new Date(data.Date + ' ' + data.Time);
 	ret.Finish = getElapsedTime(ret.Start, data['Duration']);
@@ -62,7 +62,7 @@ function makeSighting(title, data, guid) {
 }
 
 function rssSightingsToJSON(data) {
-	var result = {}
+	var result = {};
 	result.title = data.title[0];
 	result.desc = data.description[0];
 	result.uri = data.link[0];
