@@ -1,0 +1,30 @@
+{
+  "name": "SpotTheStationRSSParser",
+  "version": "0.1.0",
+  "description": "Converts a NASA Spot The Station RSS file to a javascript object.",
+  "main": "spotthestationRSS.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colw/SpotTheStationRSSParser.git"
+  },
+  "keywords": [
+    "nasa",
+    "rss",
+    "spot",
+    "station",
+    "spotthestation",
+    "iss"
+  ],
+  "author": "colw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colw/SpotTheStationRSSParser/issues"
+  },
+  "homepage": "https://github.com/colw/SpotTheStationRSSParser",
+  "dependencies": {
+    "xml2js": "^0.4.4"
+  }
+}
