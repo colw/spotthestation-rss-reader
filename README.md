@@ -22,3 +22,6 @@ request(RSSURI, function(error, response, body) {
 		issParser.parseRSS(body, console.log);
 });
 ```
+
+## Todo
+ - Error handling
