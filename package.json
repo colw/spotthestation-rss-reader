@@ -1,7 +1,7 @@
 {
-  "name": "SpotTheStationRSSParser",
+  "name": "spotthestation-rss-reader",
   "version": "0.1.0",
-  "description": "Converts a NASA Spot The Station RSS file to a javascript object.",
+  "description": "Converts a NASA Spot The Station RSS file to a Javascript object.",
   "main": "spotthestationRSS.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
