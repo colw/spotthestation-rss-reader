@@ -4,10 +4,13 @@ var ISS = function() {};
 
 ISS.prototype.parseRSS = function(contents, callback) {
 	parseString(contents, function(err, result) {
-		if(err) throw err;
+		if (err) {
+			callback(err);
+		}
 		var feedObj = rssSightingsToJSON(result.rss.channel[0]);
-		if (callback)
-			callback(feedObj);
+		if (callback) {
+			callback(null, feedObj);
+		}
 	});
 };
 
