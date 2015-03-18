@@ -1,6 +1,6 @@
 {
   "name": "spotthestation-rss-reader",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Converts a NASA Spot The Station RSS file to a Javascript object.",
   "main": "main.js",
   "scripts": {
