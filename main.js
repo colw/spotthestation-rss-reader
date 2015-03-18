@@ -1,4 +1,5 @@
 var parseString = require('xml2js').parseString;
+var util = require('util');
 
 var ISS = function() {};
 
@@ -7,11 +8,23 @@ ISS.prototype.parseRSS = function(contents, callback) {
 		if (err) {
 			callback(err);
 		}
-		var feedObj = rssSightingsToJSON(result.rss.channel[0]);
-		if (callback) {
-			callback(null, feedObj);
+		else if (result && result.rss && result.rss.channel[0]) {
+			var feedObj = rssSightingsToJSON(result.rss.channel[0]);
+			if (callback) {
+				callback(null, feedObj);
+			}
+		} else {
+			if (callback) {
+				callback(new Error('Unexpected XML'));
+			}
 		}
 	});
+};
+
+ISS.prototype.formatRSSLink = function (country, region, city) {
+	// Could change, but convenient.
+	var template = 'http://spotthestation.nasa.gov/sightings/view.cfm?country=%s&region=%s&city=%s';
+	return util.format(template, country, region, city);
 };
 
 function parseTitle(s) {
